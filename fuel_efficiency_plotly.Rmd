@@ -7,7 +7,6 @@ output: html_document
 ##Fuel Efficiency by Number of Engine Cylinders
 
 This plot allows users to explore the relationship between an automobile's fuel efficiency in terms of miles per gallon and the number of cylinders its engine has.
-
 ```{r, echo=FALSE, warning=FALSE, message = FALSE}
 library(plotly)
 f <- list(
@@ -15,16 +14,15 @@ f <- list(
   size = 18,
   color = "#7f7f7f"
 )
-x <- list(
+x_axis <- list(
   title = "Number of Cylinders",
   titlefont = f
 )
-y <- list(
+y_axis <- list(
   title = "Fuel Efficiency (MPGs)",
   titlefont = f
 )
-p <- plot_ly(mtcars,x=mtcars$cyl,y=mtcars$mpg,mode="markers") %>%
-  layout(xaxis=x,yaxis=y)
-p
+plot_ly(mtcars,x=~mtcars$cyl,y=~mtcars$mpg,type="scatter",mode="markers") %>%
+  layout(xaxis=x_axis,yaxis=y_axis)
 ```
 
