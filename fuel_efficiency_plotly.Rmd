@@ -1,12 +1,12 @@
 ---
-title: "Fuel Efficiency - Plotly"
+title: "Fuel Efficiency by Number of Cylinders"
 author: "ill-cam"
-date: "January 8, 2017"
-output: html_document
+date: "August 6, 2017"
+output: ioslides_presentation
 ---
-##Fuel Efficiency by Number of Engine Cylinders
+##Fuel Efficiency
+####Explore the relationship between an automobile's fuel efficiency (miles per gallon) and the number of cylinders its engine has.
 
-This plot allows users to explore the relationship between an automobile's fuel efficiency in terms of miles per gallon and the number of cylinders its engine has.
 ```{r, echo=FALSE, warning=FALSE, message = FALSE}
 library(plotly)
 f <- list(
@@ -25,4 +25,3 @@ y_axis <- list(
 plot_ly(mtcars,x=~mtcars$cyl,y=~mtcars$mpg,type="scatter",mode="markers") %>%
   layout(xaxis=x_axis,yaxis=y_axis)
 ```
-
